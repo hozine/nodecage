@@ -1,1 +1,3 @@
-console.log('message is now!');
+//console.log('message is now!');
+var read=require('./read');
+read();
