@@ -1,3 +1,5 @@
 //console.log('message is now!');
 var read=require('./read');
-read();
+var fa=require('./fileaccess');
+//read();
+ 
