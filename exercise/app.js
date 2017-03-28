@@ -13,3 +13,13 @@ var yibu = require('./test');
 const jsontest = require('./jsontest');
 jsontest();*/
 
+/*var a=[],
+    b=[1],
+    c=[1,2],
+    d=[1,2,3];
+a.push(b);
+console.log(a);
+a.push(c);
+console.log(a);
+a.push(d);
+console.log(a);*/

@@ -1,9 +1,9 @@
 module.exports=hetu;
 function hetu(){
-    var a=[]; //暂存中间结果
+    //var a=[]; //暂存中间结果
     var bef=[]; //存放前结果
     var res=[]; //存放计算后结果
-
+    console.log('The calculate began...')
     for(let i0=1;i0<10;i0++){
         for(let i1=1;i1<10;i1++){
             for(let i2=1;i2<10;i2++){
@@ -13,6 +13,7 @@ function hetu(){
                             for(let i6=1;i6<10;i6++){
                                 for(let i7=1;i7<10;i7++){
                                     for(let i8=1;i8<10;i8++){
+                                        let a=[];
                                         a[0]=i0;
                                         a[1]=i1;
                                         a[2]=i2;
@@ -22,7 +23,16 @@ function hetu(){
                                         a[6]=i6;
                                         a[7]=i7;
                                         a[8]=i8;
-                                        bef.push(a);
+                                        if(a[0]+a[1]+a[2]===15&&a[3]+a[4]+a[5]===15&&a[6]+a[7]+a[8]===15&&a[0]+a[4]+a[8]===15&&a[2]+a[4]+a[6]===15&&a[0]+a[3]+a[6]===15&&a[1]+a[4]+a[7]===15&&a[2]+a[5]+a[8]){
+                                            //console.log(a);
+                                            if(a.filter(function(ele,i,self){
+                                                return self.indexOf(ele)===i;
+                                            }).length===9){
+                                            
+                                                res.push(a);
+                                            }
+                                            
+                                        }      
                                     }
                                 }
                             }
@@ -32,10 +42,9 @@ function hetu(){
             }
         }
     }
-    res=bef.filter(function (x){
-        return x[0]+x[1]+x[2]===15&&x[3]+x[4]+x[5]===15&&x[6]+x[7]+x[8]===15&&x[0]+x[4]+x[8]===15&&x[2]+x[4]+x[6]===15&&x[0]+x[3]+x[6]===15&&x[1]+x[4]+x[7]===15&&x[2]+x[5]+x[8];
-    });
+    //res=bef;
     console.log(`There are ${res.length} set.`);
+    //console.log(res);
     for(let i in res){
         console.log(`this is the ${i} :
         ${res[i][0]}  ${res[i][1]}  ${res[i][2]}
